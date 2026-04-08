@@ -6,11 +6,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         VerifyCredentials userLogin = new VerifyCredentials("accounts.txt");
         CreateAccount createAccount = new CreateAccount();
-        Boolean validUser = false;
+        boolean validUser = false;
 
 
         
-        while (validUser == false) {
+        while (!validUser) {
             System.out.println("Do you have a login already?  y/n");
             String userInput = scanner.nextLine();
             
