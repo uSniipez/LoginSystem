@@ -5,7 +5,6 @@ public class ReadFile {
   Scanner scanner = new Scanner(System.in);
   String fileName;
   
-
   public ReadFile(String fileName) {
     this.fileName = fileName;
   }

@@ -5,11 +5,10 @@ public class VerifyCredentials {
   Scanner scanner = new Scanner(System.in);
   private String fileName;
 
-  public VerifyCredentials(/*String userName, String password, */ String fileName) {
+  public VerifyCredentials(String fileName) {
     this.fileName = fileName;
   }
 
-  // only need filename? cause username and password will be inserted directly to method
   public Boolean login() {
     System.out.println("Enter your username:");
     String userInputUsername = scanner.nextLine();
@@ -23,13 +22,10 @@ public class VerifyCredentials {
       while (fileScanner.hasNextLine()) {
         String line = fileScanner.nextLine();
           
-
-        // Skip empty lines
         if (line.trim().isEmpty()) {
             continue;
         }
 
-        // if userInput equals a valid login, return true
         if (userInput.equals(line)) {
             System.out.println("");
             System.out.println("Welcome back " + userInputUsername + "!");
