@@ -3,13 +3,9 @@ import java.nio.file.Paths;
 
 public class VerifyCredentials {
   Scanner scanner = new Scanner(System.in);
-  //private String userName;
-  //private String password;
   private String fileName;
 
   public VerifyCredentials(/*String userName, String password, */ String fileName) {
-    //this.userName = userName;
-    //this.password = password;
     this.fileName = fileName;
   }
 
@@ -21,8 +17,7 @@ public class VerifyCredentials {
     System.out.println("Enter your password:");
     String userInputPassword = scanner.nextLine();
 
-    String userInput = (userInputUsername + "," + userInputPassword);  // I could make a method that returns 2 strings in csv form
-    //System.out.println(userInput);
+    String userInput = (userInputUsername + "," + userInputPassword); 
 
     try (Scanner fileScanner = new Scanner(Paths.get(this.fileName))) {
       while (fileScanner.hasNextLine()) {
@@ -39,17 +34,13 @@ public class VerifyCredentials {
             System.out.println("");
             System.out.println("Welcome back " + userInputUsername + "!");
             return true;
-            
         }
       }
     } catch (Exception e) {
       System.out.println("Error: " + e.getMessage());
     }
 
-    if (!userInput.equals(line)) {
-            System.out.println("Not a valid username or password! Please try again");
-            
-        }
+    System.out.println("Not a valid username or password! Please try again"); 
     return false;
   } 
 }

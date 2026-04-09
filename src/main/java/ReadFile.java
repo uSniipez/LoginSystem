@@ -9,8 +9,6 @@ public class ReadFile {
   public ReadFile(String fileName) {
     this.fileName = fileName;
   }
-
-
   
   public void readCsvFile() {
       try (Scanner fileScanner = new Scanner(Paths.get(fileName))) {
@@ -18,6 +16,10 @@ public class ReadFile {
         while (fileScanner.hasNextLine()) {
             String line = fileScanner.nextLine();
 
+            //skips header
+            if (scanner.hasNextLine()) {
+                scanner.nextLine();
+            }
             // Skip empty lines
             if (line.trim().isEmpty()) {
                 continue;
@@ -26,19 +28,11 @@ public class ReadFile {
             String[] parts = line.split(",");
             String userName = parts[0];
             String password = parts[1];
-
-        
-
-            //System.out.println("Username: " + userName);
-            //System.out.println("Password: " + password);
         }
 
     } catch (Exception e) {
         System.out.println("Error: " + e.getMessage());
         }
-    
-    
-    
   }
 }
 
