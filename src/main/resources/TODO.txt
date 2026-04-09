@@ -1,0 +1,5 @@
+TODO
+- Prevent duplicate usernames
+- Prevent being able to login with header of accounts.csv
+
+
