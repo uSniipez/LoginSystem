@@ -22,7 +22,7 @@ public class VerifyCredentials {
     try (Scanner fileScanner = new Scanner(Paths.get(this.fileName))) {
       while (fileScanner.hasNextLine()) {
         String line = fileScanner.nextLine();
-          //System.out.println(line);
+          
 
         // Skip empty lines
         if (line.trim().isEmpty()) {
