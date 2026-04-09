@@ -41,15 +41,15 @@ public class VerifyCredentials {
             return true;
             
         }
-        if (!userInput.equals(line)) {
-            System.out.println("Not a valid username or password! Please try again");
-            
-        }
       }
     } catch (Exception e) {
       System.out.println("Error: " + e.getMessage());
     }
 
+    if (!userInput.equals(line)) {
+            System.out.println("Not a valid username or password! Please try again");
+            
+        }
     return false;
   } 
 }
