@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import java.io.FileWriter;
@@ -9,14 +8,14 @@ public class CreateAccount {
   private String password;
 
   public void createAccount() {
-    try (FileWriter writeCreateAccount = new FileWriter("data/accounts.csv", true)) {
+    try (FileWriter createAccount = new FileWriter("data/accounts.csv", true)) {
       System.out.println("Enter a username below: ");
       this.userName = scanner.nextLine();
 
       System.out.println("Enter a password below: ");
       this.password = scanner.nextLine();
 
-      writeCreateAccount.write(userName + "," + password + "\n");
+      createAccount.write(userName + "," + password + "\n");
       System.out.println("Successfully created a new account!");
 
     } catch (IOException e) {
