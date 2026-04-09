@@ -1,10 +1,11 @@
 import java.util.Scanner;
 
+
 public class Main {
     public static void main(String[] args) {
         
         Scanner scanner = new Scanner(System.in);
-        VerifyCredentials userLogin = new VerifyCredentials("accounts.txt");
+        VerifyCredentials userLogin = new VerifyCredentials("accounts.csv");
         CreateAccount createAccount = new CreateAccount();
         boolean validUser = false;
 
@@ -15,10 +16,9 @@ public class Main {
             String userInput = scanner.nextLine();
             
             if (userInput.equals("n")) {
-                createAccount.createAccount();
-            }
-            
-            if (userInput.equals("y")) {
+                CreateAccount account = new CreateAccount();
+                account.createAccount();
+            } else if (userInput.equals("y")) {
                 if (userLogin.login()) { 
                     validUser = true;
                     break;
@@ -36,7 +36,7 @@ public class Main {
 todo:
 - Ask user if they have an acount 
     - if no prompt to create account
-        - get username + password and write it to accounts.txt 
+        - get username + password and write it to accounts.csv
     
     - if yes proceed to login screen
 

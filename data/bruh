@@ -1,0 +1,41 @@
+
+    Scanner scanner = new Scanner(new File("D:/Data/Repositories/LoginSystem/data/test.csv"));
+
+      //skips header
+      if (scanner.hasNextLine()) {
+        scanner.nextLine();
+      }
+
+      while (scanner.hasNextLine()) {
+        String line = scanner.nextLine();
+
+        if (line.isEmpty()) {
+          try {
+            FileWriter createAccount = new FileWriter("D:/Data/Repositories/LoginSystem/data/test.csv", true);
+            createAccount.write("hello");
+            createAccount.close();
+
+
+          } catch (IOException e) {
+            System.out.println("An error ocurred.");
+            e.printStackTrace();
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+  this works:
+    public void createAccount() {
+      try (FileWriter writeCreateAccount = new FileWriter("D:\\Data\\Repositories\\LoginSystem\\data\\test.csv")) {
+        writeCreateAccount.write("is this working yet");
+        System.out.println("Successfully wrote to the file.");
+      } catch (IOException e) {
+        System.out.println("Error: this shit don't work");
+        e.printStackTrace();
+      }
+    }
+  }
